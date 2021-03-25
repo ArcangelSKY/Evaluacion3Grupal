@@ -22,7 +22,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemClickListener {
 
     private ListView listView;
-    private List<ModeloMain> listaMain = new ArrayList<>();
+    private ArrayList<ModeloMain> listaMain = new ArrayList<>();
     AdapterJ adapterJ;
 
     @Override
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         listaMain.add(new ModeloMain("Galeria", R.drawable.galeriafotos));
 
         //creacion adapter para usar layout personalizado y lista con datos.
-        adapterJ = new AdapterJ(MainActivity.this,R.layout.layout_principal, listaMain);
+        adapterJ = new AdapterJ(this,R.layout.layout_principal, listaMain);
         listView.setAdapter(adapterJ);
 
         //Metodo para ejecutar acciones al hacer Click en items
